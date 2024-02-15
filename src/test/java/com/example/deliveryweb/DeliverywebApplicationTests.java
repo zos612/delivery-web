@@ -1,10 +1,10 @@
-package com.example.deliveryweb.web;
+package com.example.deliveryweb;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Toy1ApplicationTests {
+class DeliverywebApplicationTests {
 
     @Test
     void contextLoads() {

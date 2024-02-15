@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Stores</title>
+</head>
+<body>
+<ol>
+    <li>피자나라</li>
+    <li>피자헛</li>
+    <li th:each="store : ${stores}" th:text="${store.name}"></li>
+</ol>
+
+</body>
+</html>
