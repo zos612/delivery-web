@@ -1,10 +1,10 @@
 package com.example.deliveryweb.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 @Data
 @Entity
@@ -18,6 +18,7 @@ public class Store {
     @Column(nullable = false)
     private String name;
 
+    @NotEmpty
     @Column(nullable = false)
     private String category;
 
@@ -39,8 +40,8 @@ public class Store {
     @Column(precision = 2, scale = 1)
     private BigDecimal averageRating;
 
-    @Column
-    private String logoImage;
+//    @Column
+//    private String logoImage;
 
     // Getters and setters
 }

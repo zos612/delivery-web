@@ -30,10 +30,10 @@ CREATE TABLE stores (
                         day_off VARCHAR(255) NOT NULL,
                         delivery_fee INT NOT NULL,
                         minimum_order_amount INT NOT NULL,
-                        average_rating DECIMAL(2,1),
+                        average_rating DECIMAL(2,1)
 --                         review_count INT NOT NULL,
 --                         main_menu VARCHAR(255) NOT NULL,
-                        logo_image VARCHAR(255)
+--                         logo_image VARCHAR(255)
 );
 
 CREATE TABLE menus (
