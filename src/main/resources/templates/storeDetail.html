@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Stores Detail</title>
+</head>
+<body>
+<ol>
+    <li th:each="menu : ${menus}" ><a href="stores/1/menus/1" th:text="${menu.name}"></a></li>
+</ol>
+
+</body>
+</html>

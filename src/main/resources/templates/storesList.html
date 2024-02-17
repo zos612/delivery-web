@@ -2,11 +2,11 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Stores</title>
+    <title>Stores List</title>
 </head>
 <body>
 <ol>
-    <li th:each="store : ${stores}" th:text="${store.name}"></li>
+    <li th:each="store : ${stores}" ><a th:text="${store.name}" th:href="@{stores/__${store.id}__}"></a></li>
 </ol>
 
 </body>

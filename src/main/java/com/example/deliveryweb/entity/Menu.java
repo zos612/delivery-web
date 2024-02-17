@@ -24,10 +24,10 @@ public class Menu {
 
     private String description;
 
-    private String options;
+//    private String options;
 
-    private String image;
-
+//    private String image;
+//
     // Getters and setters
 }
 

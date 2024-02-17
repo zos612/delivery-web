@@ -42,8 +42,8 @@ CREATE TABLE menus (
                        name VARCHAR(255) NOT NULL,
                        price INT NOT NULL,
                        description VARCHAR(255),
-                       options VARCHAR(255),
-                       image VARCHAR(255),
+--                        options VARCHAR(255),
+--                        image VARCHAR(255),
                        FOREIGN KEY (store_id) REFERENCES stores(id)
 );
 
