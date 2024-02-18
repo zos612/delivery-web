@@ -5,6 +5,8 @@ import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Entity
@@ -17,6 +19,10 @@ public class Store {
 
     @Column(nullable = false)
     private String name;
+
+    @Column
+    @OneToMany(mappedBy = "store")
+    private List<Menu> menus = new ArrayList<>();
 
     @NotEmpty
     @Column(nullable = false)

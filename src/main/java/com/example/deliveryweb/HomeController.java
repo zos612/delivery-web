@@ -18,12 +18,10 @@ import java.util.List;
 @Controller
 public class HomeController {
 
-    final StoreRepository storeRepository;
-    final MenuRepository menuRepository;
+    private final StoreRepository storeRepository;
 
-    public HomeController(StoreRepository storeRepository, MenuRepository menuRepository) {
+    public HomeController(StoreRepository storeRepository) {
         this.storeRepository = storeRepository;
-        this.menuRepository = menuRepository;
     }
 
     @GetMapping("/stores")
@@ -38,9 +36,13 @@ public class HomeController {
     }
 
     @GetMapping("/stores/{id}")
-    public String showStoreDetail(@PathVariable Long id, Model model){
-        List<Menu> menus = menuRepository.findByStoreId(id);
-        model.addAttribute("menus", menus);
+    public String getStoreDetail(@PathVariable Long id, Model model){
+        Store store = storeRepository.findByIdWithMenus(id).orElse(null);
+
+        if(store == null){
+            return "error";
+        }
+        model.addAttribute(store);
         return "storeDetail";
     }
 }

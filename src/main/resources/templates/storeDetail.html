@@ -5,8 +5,41 @@
     <title>Stores Detail</title>
 </head>
 <body>
+
+<h2>가게 정보</h2>
+<table th:object="${store}">
+    <tr>
+        <th>가게명</th>
+        <td th:text="*{name}"></td>
+    </tr>
+    <tr>
+        <th>영업시간</th>
+        <td th:text="*{businessHours}"></td>
+    </tr>
+    <tr>
+        <th>평점</th>
+        <td th:text="*{averageRating}"></td>
+    </tr>
+    <tr>
+        <th>배달비</th>
+        <td th:text="*{deliveryFee}"></td>
+    </tr>
+    <tr>
+        <th>최소주문금액</th>
+        <td th:text="*{minimumOrderAmount}"></td>
+    </tr>
+    <tr>
+        <th>휴무일</th>
+        <td th:text="*{dayOff}"></td>
+    </tr>
+    <tr>
+        <th>주소</th>
+        <td th:text="*{location}"></td>
+    </tr>
+</table>
+
 <ol>
-    <li th:each="menu : ${menus}" ><a href="stores/1/menus/1" th:text="${menu.name}"></a></li>
+    <li th:each="menu : ${store.menus}" ><a href="stores/1/menus/1" th:text="${menu.name}"></a></li>
 </ol>
 
 </body>
