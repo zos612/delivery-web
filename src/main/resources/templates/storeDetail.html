@@ -38,9 +38,14 @@
     </tr>
 </table>
 
-<ol>
-    <li th:each="menu : ${store.menus}" ><a href="stores/1/menus/1" th:text="${menu.name}"></a></li>
-</ol>
+<h3>메뉴</h3>
+<ul>
+    <li th:each="menu : ${store.menus}" style="list-style: none">
+        <input type="checkbox" th:value="${menu.id}">
+        <label th:text="${menu.name + ' ' +menu.price}"></label>
+    </li>
+</ul>
 
+<button onclick="">장바구니 담기</button>
 </body>
 </html>

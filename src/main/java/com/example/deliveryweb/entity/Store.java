@@ -10,7 +10,7 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "stores")
+@Table(name = "store")
 public class Store {
 
     @Id

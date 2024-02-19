@@ -7,7 +7,7 @@ VALUES
     ('박지영', '010-2345-6789', 'park@example.com', '서울시 마포구', '234567', 2),
     ('이지훈', '010-3456-7890', 'lee@example.com', '서울시 용산구', '345678', 3);
 
-INSERT INTO stores (name, category, location, business_hours, day_off, delivery_fee, minimum_order_amount, average_rating)
+INSERT INTO store (name, category, location, business_hours, day_off, delivery_fee, minimum_order_amount, average_rating)
 VALUES
     ('피자헛', '피자', '서울시 강남구', '10:00-22:00', '월요일', 2000, 15000, 4.3),
     ('청년피자', '피자', '서울시 강남구', '11:00-23:00', '월요일', 2500, 15000, 4.2),
@@ -27,7 +27,7 @@ VALUES
     ('스타벅스', '커피', '서울시 용산구', '07:00-23:00', '없음', 0, 5000, 4.3);
 
 
-INSERT INTO menus (store_id, name, price, description)
+INSERT INTO menu (store_id, name, price, description)
 VALUES
     (1, '슈퍼 슈프림 피자', 18000, '모짜렐라 치즈, 페퍼로니, 이탈리안 소시지, 양파, 피망, 버섯 토핑'),
     (1, '콰트로 치즈 피자', 19000, '모짜렐라 치즈, 체다 치즈, 파마산 치즈, 블루 치즈 토핑'),
@@ -46,14 +46,14 @@ VALUES
     (2, 2, '불고기 버거, 새우 버거', '2023-11-14 13:00:00', '배달 중', '현금', 14500, '서울시 마포구'),
     (3, 3, '카페라떼, 아메리카노', '2023-11-14 13:30:00', '주문 완료', '카드', 8500, '서울시 용산구');
 
-INSERT INTO reviews (user_id, store_id, rating, content, created_at)
+INSERT INTO review (user_id, store_id, rating, content, created_at)
 VALUES
     (1, 1, 5, '피자 맛있었어요!', '2023-11-14 13:00:00'),
     (2, 2, 4, '불고기 버거 맛있었지만, 새우 버거는 조금 아쉬웠어요.', '2023-11-14 13:30:00'),
     (3, 3, 5, '커피 맛있고 분위기도 좋았어요!', '2023-11-14 14:00:00');
 
 
-INSERT INTO comments (review_id, user_id, content, created_at)
+INSERT INTO comment (review_id, user_id, content, created_at)
 VALUES
     (1, 2, '피자 사진도 올려주세요!', '2023-11-14 13:10:00'),
     (2, 3, '저도 새우 버거는 조금 아쉬웠어요.', '2023-11-14 13:40:00'),
