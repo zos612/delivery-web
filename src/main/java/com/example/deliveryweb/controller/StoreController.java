@@ -1,8 +1,6 @@
-package com.example.deliveryweb;
+package com.example.deliveryweb.controller;
 
-import com.example.deliveryweb.entity.Menu;
 import com.example.deliveryweb.entity.Store;
-import com.example.deliveryweb.repository.MenuRepository;
 import com.example.deliveryweb.repository.StoreRepository;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
@@ -16,11 +14,11 @@ import java.util.List;
 
 @Slf4j
 @Controller
-public class HomeController {
+public class StoreController {
 
     private final StoreRepository storeRepository;
 
-    public HomeController(StoreRepository storeRepository) {
+    public StoreController(StoreRepository storeRepository) {
         this.storeRepository = storeRepository;
     }
 

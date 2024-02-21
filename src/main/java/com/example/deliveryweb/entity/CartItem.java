@@ -7,22 +7,22 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
-@Table(name = "cart")
+@Table(name = "cart_item")
 public class CartItem {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    @JoinColumn(name = "cart_id", nullable = false)
+    private Cart cart;
 
     @ManyToOne
     @JoinColumn(name = "menu_id", nullable = false)
-    private Menu menuId;
+    private Menu menu;
 
-    private int quantity;
+    private Integer quantity;
+    private Double price;
 
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
 }
