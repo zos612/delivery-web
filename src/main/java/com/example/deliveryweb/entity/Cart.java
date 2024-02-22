@@ -24,7 +24,7 @@ public class Cart {
 
     private Double totalPrice;
 
-    private LocalDateTime createdDate;
-    private LocalDateTime modifiedDate;
+    private LocalDateTime createdAt;
+    private LocalDateTime modifiedAt;
 
 }

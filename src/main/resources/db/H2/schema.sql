@@ -100,8 +100,8 @@ CREATE TABLE cart (
                       id BIGINT AUTO_INCREMENT PRIMARY KEY,
                       user_id BIGINT NOT NULL,
                       total_price DECIMAL(10,2),
-                      created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                      modified_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                      modified_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE cart_item (

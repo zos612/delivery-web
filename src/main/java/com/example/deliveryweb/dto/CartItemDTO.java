@@ -1,3 +1,5 @@
 package com.example.deliveryweb.dto;
 
-public record CartItemDTO(Long userId, Long menuId, Integer quantity, Double price) {}
+import java.util.List;
+
+public record CartItemDTO(Long userId, List<Long> menuIds, Integer quantity, Double price) {}
