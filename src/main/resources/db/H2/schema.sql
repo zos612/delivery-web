@@ -109,7 +109,7 @@ CREATE TABLE cart_item (
                        cart_id BIGINT NOT NULL,
                        menu_id BIGINT NOT NULL,
                        quantity INT NOT NULL,
-                       price DECIMAL(10,2),
+                       price INT,
                        FOREIGN KEY (cart_id) REFERENCES cart (id),
                        FOREIGN KEY (menu_id) REFERENCES menu (id)
 );

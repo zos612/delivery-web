@@ -3,8 +3,6 @@ package com.example.deliveryweb.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.time.LocalDateTime;
-
 @Data
 @Entity
 @Table(name = "cart_item")
@@ -23,6 +21,10 @@ public class CartItem {
     private Menu menu;
 
     private Integer quantity;
-    private Double price;
+    private Integer price;
 
+    public void addCart(Cart cart) {
+        this.cart = cart;
+        cart.getCartItems().add(this);
+    }
 }

@@ -12,9 +12,13 @@
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    'user_id' : 0
+                    'userId' : 0,
+                    'menuIds' : [0,1,2],
+                    'quantity' : 1
                 })
-            })
+            }).then((response)=>
+                console.log(response)
+            )
         }
     </script>
 </head>
@@ -60,6 +64,6 @@
     </li>
 </ul>
 
-<button onclick="">장바구니 담기</button>
+<button onclick="addToCart()">장바구니 담기</button>
 </body>
 </html>
