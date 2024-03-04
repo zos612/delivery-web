@@ -1,5 +1,15 @@
 package com.example.deliveryweb.dto;
 
+import lombok.*;
+
 import java.util.List;
 
-public record CartItemDTO(Long userId, List<Long> menuIds, Integer quantity) {}
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class CartItemDTO {
+    Long userId;
+    List<Long> menuIds;
+    Integer quantity;
+}

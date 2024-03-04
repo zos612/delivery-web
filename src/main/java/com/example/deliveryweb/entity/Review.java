@@ -2,6 +2,8 @@ package com.example.deliveryweb.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -31,7 +33,7 @@ public class Review {
 
     private String images;
 
-    @Column(nullable = false)
+    @CreatedDate
     private LocalDateTime createdAt;
 //
 //    @ManyToMany

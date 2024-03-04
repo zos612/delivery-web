@@ -2,12 +2,17 @@ package com.example.deliveryweb.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "cart")
 public class Cart {
@@ -25,7 +30,12 @@ public class Cart {
 
     private Double totalPrice;
 
+    //TODO: @CreatedDate 적용 안됨
+    @CreatedDate
+    @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
+
+    @LastModifiedDate
     private LocalDateTime modifiedAt;
 
 }

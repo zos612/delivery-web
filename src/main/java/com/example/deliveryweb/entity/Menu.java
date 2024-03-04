@@ -2,8 +2,11 @@ package com.example.deliveryweb.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "menu")
 public class Menu {

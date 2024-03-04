@@ -2,10 +2,15 @@ package com.example.deliveryweb.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import java.time.LocalDateTime;
 
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "comment")
 public class Comment {
@@ -25,7 +30,7 @@ public class Comment {
     @Column(nullable = false)
     private String content;
 
-    @Column(nullable = false)
+    @CreatedDate
     private LocalDateTime createdAt;
 }
 

@@ -6,14 +6,14 @@
     <script>
         function addToCart(){
 
-            fetch("cart", {
+            fetch("/cart", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    'userId' : 0,
-                    'menuIds' : [0,1,2],
+                    'userId' : 1,
+                    'menuIds' : [1,2,3],
                     'quantity' : 1
                 })
             }).then((response)=>

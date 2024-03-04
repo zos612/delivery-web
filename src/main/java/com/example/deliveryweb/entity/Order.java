@@ -44,5 +44,4 @@ public class Order {
 
     private LocalDateTime deliveryCompletedTime;
 
-    // Getters and setters
 }

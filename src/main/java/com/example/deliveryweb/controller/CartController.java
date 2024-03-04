@@ -9,7 +9,6 @@ import com.example.deliveryweb.repository.CartItemRepository;
 import com.example.deliveryweb.repository.CartRepository;
 import com.example.deliveryweb.repository.MenuRepository;
 import jakarta.validation.Valid;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @RestController
@@ -39,19 +37,19 @@ public class CartController {
             return ResponseEntity.badRequest().body("장바구니 담기에 실패 했습니다.");
         }
 
-        Cart cart = cartRepository.findByUserId(cartItemDTO.userId());
+        Cart cart = cartRepository.findByUserId(cartItemDTO.getUserId());
 
         //cart가 없는 경우 cart 세팅
         if(cart == null){
             cart = new Cart();
             User user = new User();
-            user.setId(cartItemDTO.userId());
+            user.setId(cartItemDTO.getUserId());
             cart.setUser(user);
         }
         Set<CartItem> cartItemToAdd = new HashSet<>();
 
         //menu id로 cartItem 초회 후 cart에 추가
-        for (Long menuId : cartItemDTO.menuIds()) {
+        for (Long menuId : cartItemDTO.getMenuIds()) {
             Menu menu = menuRepository.findById(menuId).orElse(null);
             if(menu == null){
                 return ResponseEntity.badRequest().body("존재하지 않는 메뉴입니다.");
@@ -59,8 +57,8 @@ public class CartController {
             CartItem cartItem = new CartItem();
             cartItem.setMenu(menu);
             cartItem.addCart(cart);
-            cartItem.setQuantity(cartItemDTO.quantity());
-            cartItem.setPrice(menu.getPrice() * cartItemDTO.quantity());
+            cartItem.setQuantity(cartItemDTO.getQuantity());
+            cartItem.setPrice(menu.getPrice() * cartItemDTO.getQuantity());
 
             cartItemToAdd.add(cartItem);
         }
